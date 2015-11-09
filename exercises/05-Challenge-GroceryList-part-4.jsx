@@ -75,7 +75,15 @@ class GroceryList extends React.Component {
   // Fill the definition of the following method to allow completing each item
   // Hint 1: Pay attention to the element's index on the list.
   toggleGroceryCompleteness(groceryIndex) {
-    // Put your code here
+    let newState = this.state.groceries.map(function(item, index){
+      if (groceryIndex === index) {
+        item.completed = true;
+      }
+      return item;
+    });
+    this.setState({
+      groceries: newState
+    });
   }
 
   render() {
