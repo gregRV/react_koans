@@ -75,13 +75,15 @@ class WhatsYourName extends React.Component {
   // Hint: use `console.log` to check `event.target`. You will find text
   //       entered to the input there.
   onNameChange(event) {
+
+    // does this need to be async?
 		this.setState({
 			name: event.target.value
 		});
 
 		if (this.state.name.length === 0) {
 			this.setState({
-				name: "Hey there. Enter your name." 
+				name: "Hey there. Enter your name."
 			});
 		}
 		console.log('name:', this.state.name);
